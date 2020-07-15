@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
 }
 fieldset{
     border: 1px solid rgba(221, 221, 221, 0);
@@ -326,7 +331,8 @@ header p {
     display: flex;
     flex-direction: row;
     align-content: space-evenly;
-    margin: 20px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
+    transform: translateY(20px);
 
 }
 .pad2,.pad4,.pad6{
