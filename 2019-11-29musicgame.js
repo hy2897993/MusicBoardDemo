@@ -237,7 +237,7 @@ const createSpectrums = (keyType,index)=>{
                 tubes[index].style.animation='none';
             })
             ovals[index].style.animation='ovalMove 1s ease-in-out'
-            tubes[index].addEventListener('animationend',function(){
+            ovals[index].addEventListener('animationend',function(){
                 tubes[index].style.animation='none';
             })
             ovals[index].addEventListener('animationend',function(){
@@ -254,33 +254,33 @@ const createSpectrums = (keyType,index)=>{
             ,   drumR = drumLoc.right
             ,   drumT = drumLoc.top
             ,   drumB = drumLoc.bottom;
-            console.log(drumLoc);
+            // console.log(drumLoc);
             var circleL = (drumL+drumR)/2-125
             ,   circleT = (drumT+drumB)/2-125;
             
-            console.log(circleT);
+            // console.log(circleT);
         
       
     //drums bubbles      
         const bubbleBlur1 = document.createElement('span');
-        const bubbleBlur2 = document.createElement('span');
-        const bubbleBlur3 = document.createElement('span');
-        const bubbleBlur4 = document.createElement('span');
+        // const bubbleBlur2 = document.createElement('span');
+        // const bubbleBlur3 = document.createElement('span');
+        // const bubbleBlur4 = document.createElement('span');
         
         bubble.appendChild(bubbleBlur1);
-        bubble.appendChild(bubbleBlur2);
-        bubble.appendChild(bubbleBlur3);
-        bubble.appendChild(bubbleBlur4);
+        // bubble.appendChild(bubbleBlur2);
+        // bubble.appendChild(bubbleBlur3);
+        // bubble.appendChild(bubbleBlur4);
 
         
         bubble.style.left = circleL+'px';
         bubble.style.top = circleT+'px';
-        bubble.style.animation = 'bumpin 1s ease';
+        bubble.style.animation = 'bumpin 1.5s ease';
 
         bubbleBlur1.style.filter = "blur(5px)";
-        bubbleBlur2.style.filter = "blur(10px)";
-        bubbleBlur3.style.filter = "blur(20px)";
-        bubbleBlur4.style.filter = "blur(55px)";
+        // bubbleBlur2.style.filter = "blur(10px)";
+        // bubbleBlur3.style.filter = "blur(20px)";
+        // bubbleBlur4.style.filter = "blur(55px)";
 
         bubble.addEventListener('animationend',function(){
             visual2.removeChild(this);
