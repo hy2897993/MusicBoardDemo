@@ -1,3 +1,25 @@
+const changeText=()=>{
+        var displayText = document.getElementById('text')
+        var headerBox = document.getElementById('header')
+        var toggle = false
+        setInterval(() => {
+            if(!toggle){
+                toggle = true
+                displayText.style.animation = 'textFade 1s ease-in-out'
+                displayText.addEventListener('animationend',function(){
+                    displayText.innerHTML = 'Make Your Music With One Click!'
+                    displayText.style.animation = 'textShow 1s ease-in-out'
+                })
+            }else{
+                toggle = false
+                displayText.style.animation = 'textFade 1s ease-in-out'
+                displayText.addEventListener('animationend',function(){
+                    displayText.innerHTML = 'Hold "SPACE" Key To See Keyboard Guide'
+                    displayText.style.animation = 'textShow 1s ease-in-out'
+                })
+            }
+        }, 6000);
+}
 
 window.addEventListener('load',()=>{
     function getStyle(ele,attr){
@@ -9,6 +31,17 @@ window.addEventListener('load',()=>{
         }
         return parseFloat(res);
     }
+    
+
+
+
+
+    const instructionClass = document.querySelector('.instructions');
+    const instructionElements = document.querySelectorAll('.keyNote, .keyNote-1, .drumNote, .padNote');
+    const preInstruction = document.querySelector('#pre-instruction')
+    // const keyNote1 = document.getElementsByClassName('.keyNote-1');
+    // const drumNote = document.getElementsByClassName('.drumNote');
+    // const padNote = document.getElementsByClassName('.padNote');
 
 
     const visual = document.querySelector('.visual');
@@ -48,8 +81,11 @@ window.addEventListener('load',()=>{
     const songPads = document.querySelectorAll('.music>div');
 
     var rect=[];
+
+
+    changeText()
     
-   
+    setTimeout(()=> preInstruction.style.opacity = "0" ,3000)
     // for (i=0;i<4;i++){
     //     const rect_i = songPads[i].getBoundingClientRect();
     //     console.log(rect_i.top,rect_i.right)
@@ -68,12 +104,152 @@ window.addEventListener('load',()=>{
     //     ball1_i.style.position='fixed';
     // }    
     
-        
-    
-    
-    
     const coolColor = [ "#2c73d2","#ff64c4","#ff818f","#ffab68","#ffd55a","#f9f871", "#9bde7e","#4bbc8e","#039590" ];
+
+    document.onkeydown = function(evt){
+        var e = evt||window.event;
+        //get key value
+        var keyCode = e.code;
+        if(keyCode == 'Space'){
+            instructionClass.style.display = 'block'
+            instructionElements.forEach(element => {
+                element.style.display = 'block';
+            });
+        }
+    }
+
+    document.onkeyup = function(evt){
+        var e = evt||window.event;
+        //get key value
+        var keyVal = e.key;
+        var array1 = ['z', 'x', 'c', 'v', 'b', 'n']
+        var array2 = ['a', 's', 'd', 'f', 'g', 'h', 'j']
+        var array3 = ['~','!','@','#','$','%','^','&','*','(',')','_','+','Q', 'W', 'E', 'R', 'T', 'Y', 'U','I','O','P','{','}']
+        var array4 = ['`','1','2','3','4','5','6','7','8','9','0','-','=','q', 'w', 'e', 'r', 't', 'y', 'u','i','o','p','[',']']
+        var array5 = ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown']
     
+       if(e.code== 'Space'){
+        instructionClass.style.display = 'none'
+        instructionElements.forEach(element => {
+            element.style.display = 'none';
+        });
+       }
+        
+        if(array1.includes(keyVal)){
+            var index = array1.indexOf(keyVal)
+            console.log('pad'+index)
+            sounds[index].currentTime = 0;
+            sounds[index].play();
+            backgroundChanging(index);
+            pads[index].style.animation='pressBtn 1s ease-in-out';
+            cubes[index].style.animation='rotate 1s ease-in-out'
+            // translateY(30px)'
+            padsLeftFaces[index].style.animation='pressBtn_1 1s ease-in-out ';
+            padsRightFaces[index].style.animation='pressBtn_2 1s ease-in-out ';        
+
+            pads[index].addEventListener('animationend',function(){
+            pads[index].style.animation='none';
+            padsLeftFaces[index].style.animation='none';
+            padsRightFaces[index].style.animation='none';})
+
+            cubes[index].addEventListener('animationend',function(){
+            cubes[index].style.animation='none';
+        })
+        }
+
+        if(array2.includes(keyVal)){
+            var index = array2.indexOf(keyVal)
+
+            tubes[index].style.animation='tubeStrech 1s ease-in-out'
+            tubes[index].addEventListener('animationend',function(){
+                tubes[index].style.animation='none';
+            })
+            ovals[index].style.animation='ovalMove 1s ease-in-out'
+            ovals[index].addEventListener('animationend',function(){
+                tubes[index].style.animation='none';
+            })
+            ovals[index].addEventListener('animationend',function(){
+                ovals[index].style.animation='none';
+            })
+            console.log(drums[index]);
+            drumSounds[index].currentTime = 0;
+            drumSounds[index].play();
+
+            const bubble = document.createElement('div');
+            visual2.appendChild(bubble);
+            
+            var drumLoc = drums[index].getBoundingClientRect();
+            var  drumL = drumLoc.left
+            ,   drumR = drumLoc.right
+            ,   drumT = drumLoc.top
+            ,   drumB = drumLoc.bottom;
+            // console.log(drumLoc);
+            var circleL = (drumL+drumR)/2-125
+            ,   circleT = (drumT+drumB)/2-125;
+
+            //drums bubbles      
+            const bubbleBlur1 = document.createElement('span');
+            bubble.appendChild(bubbleBlur1);
+            bubble.style.left = circleL+'px';
+            bubble.style.top = circleT+'px';
+            bubble.style.animation = 'bumpin 1.5s ease';
+            bubbleBlur1.style.filter = "blur(5px)";
+            bubble.addEventListener('animationend',function(){
+                visual2.removeChild(this);
+            });
+        }
+
+
+        if(array3.includes(keyVal)){
+            var i = array3.indexOf(keyVal)
+            var index = i*2+1
+
+            keySounds[index].currentTime = 0;
+            keySounds[index].play();
+            
+            createVerticalSpectrums(keys,index);
+            
+        }
+
+
+        if(array4.includes(keyVal)){
+            var i = array4.indexOf(keyVal)
+            var index = i*2
+
+            keySounds[index].currentTime = 0;
+            keySounds[index].play();
+
+            createSpectrums(keys,index);
+        }
+        if(e.keyCode == 220){
+            var index = 50
+
+            keySounds[index].currentTime = 0;
+            keySounds[index].play();
+
+            createSpectrums(keys,index);
+        }
+
+        if(array5.includes(keyVal)){
+            var index = array5.indexOf(keyVal)
+            if(hits[index]===0){
+                songSounds[index].currentTime = 0;
+                songSounds[index].play();
+                songPads_1s[index].style.animation='colorAnimation 5s ease-in-out infinite';
+                songPads_1s[index].style.backgroundImage='linear-gradient(120deg, #fff352 0%, #a9ffa1 19%, #57c6e1 42%, #b49fda 79%, #fff352 100%)';
+                songPads_1s[index].style.backgroundSize= '300%';
+                hits[index] = 1;
+            }
+            else if(hits[index]===1){
+                hits[index] = 0;
+                songSounds[index].currentTime = 3600;
+                songPads_1s[index].style.animation='none';
+                songPads_1s[index].style.backgroundImage='linear-gradient(-60deg, #fff352 0%, #a9ffa1 100%)';
+                songPads_1s[index].style.backgroundSize= '100%';
+            }
+        }
+
+    }
 
 
     //pads hit
@@ -296,4 +472,5 @@ const createSpectrums = (keyType,index)=>{
 
     const preload = document.querySelector('.preload');
     preload.classList.add("preload-finish");
+
 });
