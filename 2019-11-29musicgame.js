@@ -85,7 +85,7 @@ window.addEventListener('load',()=>{
 
     changeText()
     
-    setTimeout(()=> preInstruction.style.opacity = "0" ,3000)
+    setTimeout(()=> preInstruction.style.opacity = "0" ,2200)
     // for (i=0;i<4;i++){
     //     const rect_i = songPads[i].getBoundingClientRect();
     //     console.log(rect_i.top,rect_i.right)
