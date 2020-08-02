@@ -85,7 +85,17 @@ window.addEventListener('load',()=>{
 
     changeText()
     
-    setTimeout(()=> preInstruction.style.opacity = "0" ,2200)
+    setTimeout(()=> {
+        preInstruction.style.opacity = "0" 
+        preInstruction.addEventListener('transitionend',function(){
+            removePreInstruction()
+            console.log('remove preInstruction')
+        })
+    },2200)
+
+    const removePreInstruction=()=>{
+        document.getElementById('body').removeChild(preInstruction)
+    }
     // for (i=0;i<4;i++){
     //     const rect_i = songPads[i].getBoundingClientRect();
     //     console.log(rect_i.top,rect_i.right)
