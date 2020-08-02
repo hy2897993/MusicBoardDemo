@@ -1,596 +1,425 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <title>Music Board</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href= "2019-11-29musical game.css">
-</head>
-<body id="body">
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!--
 
-<div class="preload">
-    <img class="airplane" src="./Preloader/head.png" alt="airplane">
-    <h3>Landing on the website...</h3>
-    <img src="./Preloader/cloud.png" alt="cloud1" class="cloud1">
-    <img src="./Preloader/cloud.png" alt="cloud2" class="cloud2">
-    <img src="./Preloader/cloud.png" alt="cloud3" class="cloud3">
-</div>
+Template 2091 Ziggy
 
-<div class="instructions">
-    <div class='instruction' id="instruction-1">
-        <img src="./Preloader/arrowL.png" height="60" width="60"><img src="./Preloader/arrow.png" height="60" width="60">
-        <img src="./Preloader/arrowT.png" height="60" width="60"><img src="./Preloader/arrowB.png" height="60" width="60">
-    </div>
-    <div class='instruction' id="instruction-2" style="font-weight: 900; text-shadow: 0 0 8px black;">Hold Shift And Press The Keys</div>
-    <!-- <div class='instruction' id="instruction-3"><b> </b></div> -->
-    <!-- <div class='instruction' id="instruction-4"><b> </b></div>
-    <div class='instruction' id="instruction-5"><b> </b></div> -->
-</div>
-<div id="pre-instruction"><b>Click Keys Or Hold "SPACE" Key To See Keyboard Guide</b></div>
-<div class="app">
-    <header id = 'header' style="transition: width 3s ease-in-out;">
-            <h1>Creat Your Music</h1>
-            <p id='text'>Make Your Music With One Click!</p>
-    </header>
+http://www.tooplate.com/view/2091-ziggy
 
-    <div class="visual" id="visual" alt='background color change'>
-    </div>
-    
-    <div class='visual2' id='gradientBubbles'>
-    </div>
-
-    <section class="visualloc" id="visualloc" alt='spectrum bar'>
-    
-    </section>
-
-    <fieldset class="musicf">
-            <!-- <legend class="musicl">Choose A Song</legend> -->
-            <div class="music">
-
-                    <div class="song1">
-                        <div class='lastButton'></div>
-                        <div class='lastButton-a'></div>
-                        <div class='lastButton-b'></div>
-                            <audio src="./sounds/songs/01.mp3" class="songSound"></audio>
-                    </div>
-                    <div class="song2">
-                        <div class='lastButton'></div>
-                        <div class='lastButton-a'></div>
-                        <div class='lastButton-b'></div>
-
-                            <audio src="./sounds/songs/02.mp3" class="songSound"></audio>
-                    </div>
-                    <div class="song3">
-
-                        <div class='lastButton'></div>
-                        <div class='lastButton-a'></div>
-                        <div class='lastButton-b'></div>
-
-                            <audio src="./sounds/songs/03.mp3" class="songSound"></audio>
-                    </div>
-                    <div class="song4">
-                        <div class='lastButton'></div>
-
-                        <div class='lastButton-a'></div>
-                        <div class='lastButton-b'></div>
-
-                            <audio src="./sounds/songs/04.mp3" class="songSound"></audio>
-                    </div>                
-            </div>
-    </fieldset>
-    <fieldset class="pianof">
-            <!-- <legend class="pianol">Play A Key</legend> -->
-            <div class="piano">
-                <div class="key2">
-                    <div class="keyNote">~<br>`<br> </div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/03-B.mp3" class="keySound"></audio>
-                </div>
-                <div class="key3">
-                    <div class="keyNote-1" style="transform: translateY(-20px) translateX(-5px);">~<br>`<br> </div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/04-C.mp3" class="keySound"></audio>
-                </div>
-                <div class="key4">
-                    <div class="keyNote">1</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/06-D.mp3" class="keySound"></audio>
-                </div>
-                <div class="key5">
-                    <div class="keyNote-1" style="transform: translateY(-45px) translateX(-5px);">1</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/08-E.mp3" class="keySound"></audio>
-                </div>
-                <div class="key6">
-                    <div class="keyNote">2</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/09-F.mp3" class="keySound"></audio>
-                </div>
-                <div class="key7">
-                    <div class="keyNote-1">2</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/11-G.mp3" class="keySound"></audio>
-                </div>
-                <div class="key8">
-                    <div class="keyNote">3</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/13-A.mp3" class="keySound"></audio>
-                </div>
-                <div class="key9">
-                    <div class="keyNote-1">3</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/15-B.mp3" class="keySound"></audio>
-                </div>
-                <div class="key10">
-                    <div class="keyNote">4</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/16-C.mp3" class="keySound"></audio>
-                </div>
-                <div class="key11">
-                    <div class="keyNote-1">4</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/18-D.mp3" class="keySound"></audio>
-                </div>
-                <div class="key12">
-                    <div class="keyNote">5</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/20-E.mp3" class="keySound"></audio>
-                </div>
-                <div class="key13">
-                    <div class="keyNote-1">5</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/21-F.mp3" class="keySound"></audio>
-                </div>
-                <div class="key14">
-                    <div class="keyNote">6</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/23-G.mp3" class="keySound"></audio>
-                </div>
-                <div class="key15">
-                    <div class="keyNote-1">6</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/25-A.mp3" class="keySound"></audio>
-                </div>
-                <div class="key16">
-                    <div class="keyNote">7</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/27-B.mp3" class="keySound"></audio>
-                </div>
-                <div class="key17">
-                    <div class="keyNote-1">7</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/28-C.mp3" class="keySound"></audio>
-                </div>
-                <div class="key18">
-                    <div class="keyNote">8</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/30-D.mp3" class="keySound"></audio>
-                </div>
-                <div class="key19">
-                    <div class="keyNote-1">8</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/32-E.mp3" class="keySound"></audio>
-                </div>
-                <div class="key20">
-                    <div class="keyNote">9</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/33-F.mp3" class="keySound"></audio>
-                </div>
-                <div class="key21">
-                    <div class="keyNote-1">9</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/35-G.mp3" class="keySound"></audio>
-                </div>
-                <div class="key22">
-                    <div class="keyNote">0</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/37-A.mp3" class="keySound"></audio>
-                </div>
-                <div class="key23">
-                    <div class="keyNote-1">0</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/39-B.mp3" class="keySound"></audio>
-                </div>
-                <div class="key24">
-                    <div class="keyNote">_<br>-</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/40-C.mp3" class="keySound"></audio>
-                </div>
-                <div class="key25">
-                    <div class="keyNote-1">_<br>-</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/42-D.mp3" class="keySound"></audio>
-                </div>
-                <div class="key26">
-                    <div class="keyNote">+<br>=</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/44-E.mp3" class="keySound"></audio>
-                </div>
-                <div class="key27">
-                    <div class="keyNote-1">+<br>=</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/45-F.mp3" class="keySound"></audio>
-                </div>
-                <div class="key28">
-                    <div class="keyNote">Q</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/47-G.mp3" class="keySound"></audio>
-                </div>
-                <div class="key29">
-                    <div class="keyNote-1">Q</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/49-A.mp3" class="keySound"></audio>
-                </div>
-                <div class="key30">
-                    <div class="keyNote">W</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/51-B.mp3" class="keySound"></audio>
-                </div>
-                <div class="key31">
-                    <div class="keyNote-1">W</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/52-C.mp3" class="keySound"></audio>
-                </div>
-                <div class="key32">
-                    <div class="keyNote">E</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/54-D.mp3" class="keySound"></audio>
-                </div>
-                <div class="key33">
-                    <div class="keyNote-1">E</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/56-E.mp3" class="keySound"></audio>
-                </div>
-                <div class="key34">
-                    <div class="keyNote">R</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/57-F.mp3" class="keySound"></audio>
-                </div>
-                <div class="key35">
-                    <div class="keyNote-1">R</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/59-G.mp3" class="keySound"></audio>
-                </div>
-                <div class="key36">
-                    <div class="keyNote">T</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/61-A.mp3" class="keySound"></audio>
-                </div>
-                <div class="key37">
-                    <div class="keyNote-1">T</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/63-B.mp3" class="keySound"></audio>
-                </div>
-                <div class="key38">
-                    <div class="keyNote">Y</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/64-C.mp3" class="keySound"></audio>
-                </div>
-                <div class="key39">
-                    <div class="keyNote-1">Y</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/66-D.mp3" class="keySound"></audio>
-                </div>
-                <div class="key40">
-                    <div class="keyNote">U</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/68-E.mp3" class="keySound"></audio>
-                </div>
-                <div class="key41">
-                    <div class="keyNote-1">U</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/69-F.mp3" class="keySound"></audio>
-                </div>
-                <div class="key42">
-                    <div class="keyNote">I</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/71-G.mp3" class="keySound"></audio>
-                </div>
-                <div class="key43">
-                    <div class="keyNote-1">I</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/73-A.mp3" class="keySound"></audio>
-                </div>
-                <div class="key44">
-                    <div class="keyNote">O</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/75-B.mp3" class="keySound"></audio>
-                </div>
-                <div class="key45">
-                    <div class="keyNote-1">O</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/76-C.mp3" class="keySound"></audio>
-                </div>
-                <div class="key46">
-                    <div class="keyNote">P</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/78-D.mp3" class="keySound"></audio>
-                </div>
-                <div class="key47">
-                    <div class="keyNote-1">P</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/80-E.mp3" class="keySound"></audio>
-                </div>
-                <div class="key48">
-                    <div class="keyNote">{<br>[</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/81-F.mp3" class="keySound"></audio>
-                </div>
-                <div class="key49">
-                    <div class="keyNote-1" style="transform: translateY(-45px) translateX(-5px);">{<br>[</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/83-G.mp3" class="keySound"></audio>
-                </div>
-                <div class="key50">
-                    <div class="keyNote">}<br>]</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/85-A.mp3" class="keySound"></audio>
-                </div>
-                <div class="key51" >
-                    <div class="keyNote-1"  style="transform: translateY(-20px) translateX(-5px);">}<br>]</div>
-                    <div class='hexagon'></div>
-                    <div class='hexagon-a'></div>
-                    <div class='hexagon-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/87-B.mp3" class="keySound"></audio>
-                </div>
-                <div class="key52">
-                    <div class="keyNote">|<br>\</div>
-                    <div class='hexagon-2'></div>
-                    <div class='hexagon-2-a'></div>
-                    <div class='hexagon-2-b'></div>
-                    <audio src="./sounds/piano/piano88/MP3/88-C.mp3" class="keySound"></audio>
-                </div>
-                    
-            </div>
-    </fieldset>
-    <fieldset class="drumsf">
-            <!-- <legend class="drumsl">Hit A Drum</legend> -->
-            <div class="drums">
-                    <div class="drum1">
-                            <div class="drumNote">A</div>
-                            <div class='tube'></div>
-                            <div class='oval'></div>
-                            <div class='ball'></div>                                        
-                            <audio src="./sounds/SAMPLESWAP/analog-sharp-kick.mp3" class="drumSound"></audio>
-                    </div>
-                    <div class="drum2">
-                            <div class="drumNote">S</div>
-                            <div class='tube'></div>
-                            <div class='oval'></div>
-                            <div class='ball'></div>
-                            <audio src="./sounds/SAMPLESWAP/electric_guitarpluck.mp3" class="drumSound"></audio>
-                    </div>
-                    <div class="drum3">
-                            <div class="drumNote">D</div>
-                            <div class='tube'></div>
-                            <div class='oval'></div>
-                            <div class='ball'></div>
-                            <audio src="./sounds/SAMPLESWAP/electrobop.mp3" class="drumSound"></audio>
-                    </div>
-                    <div class="drum4">
-                            <div class="drumNote">F</div>
-                            <div class='tube'></div>
-                            <div class='oval'></div>
-                            <div class='ball'></div>
-                            <audio src="./sounds/SAMPLESWAP/FingerSnap01.wav" class="drumSound"></audio>
-                    </div>
-                    <div class="drum5">
-                            <div class="drumNote">G</div>
-                            <div class='tube'></div>
-                            <div class='oval'></div>
-                            <div class='ball'></div>
-                            <audio src="./sounds/SAMPLESWAP/Gated-Clap.wav" class="drumSound"></audio>
-                    </div>
-                    <div class="drum6">
-                            <div class="drumNote">H</div>
-                            <div class='tube'></div>
-                            <div class='oval'></div>
-                            <div class='ball'></div>
-                            <audio src="./sounds/SAMPLESWAP/psycore-kick-buzzy.wav" class="drumSound"></audio>
-                    </div>
-                    <div class="drum7">
-                            <div class="drumNote">J</div>
-                            <div class='tube'></div>
-                            <div class='oval'></div>
-                            <div class='ball'></div>
-                            <audio src="./sounds/SAMPLESWAP/SPLASH TD_1.wav" class="drumSound"></audio>
-                    </div>
-            </div>
-    </fieldset>
-    <fieldset class="padsf">
+-->
+        <title>Ying Huang</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         
-            <!-- <legend class="padsl">Pads Are Yours</legend> -->
-            <div class="pads">
-                    <div class="pad1">
-                        <div class="padNote">Z</div>
-                        <div class='group'>
-                            <div class='upFace'></div>
-                            <div class='leftFace'></div>
-                            <div class='rightFace'></div>
-                        </div> 
-                        
-                        <div class='pseudoUpFace'>
-                            <div class='cube' id='cube1'></div>
-                            <div class='glow' id='glow1'></div>
-                        </div>
-                        <audio class="sound" src="./sounds/bubbles.mp3"></audio>
-                            
-                    </div>
-                    <div class="pad2">
-                        <div class="padNote">X</div>
-                        <div class='group'>
-                            <div class='upFace'></div>
-                            <div class='leftFace'></div>
-                            <div class='rightFace'></div>
-                        </div> 
-                        <audio class="sound" src="./sounds/clay.mp3"></audio>
-                        <div class='pseudoUpFace'>
-                            <div class='cube' id='cube2'></div>
-                            <div class='glow' id='glow2'></div>
-                        </div>
-                    </div>
-                    <div class="pad3">
-                        <div class="padNote">C</div>
-                        <div class='group'>
-                            <div class='upFace'></div>
-                            <div class='leftFace'></div>
-                            <div class='rightFace'></div>
-                        </div> 
-                            <audio class="sound" src="./sounds/confetti.mp3"></audio>
-                            <div class='pseudoUpFace'>
-                                <div class='cube' id='cube3'></div>
-                                <div class='glow' id='glow3'></div>
-                            </div>
-                    </div>
-                    <div class="pad4">
-                        <div class="padNote">V</div>
-                        <div class='group'>
-                            <div class='upFace'></div>
-                            <div class='leftFace'></div>
-                            <div class='rightFace'></div>
-                        </div> 
-                            <audio class="sound" src="./sounds/glimmer.mp3"></audio>
-                            <div class='pseudoUpFace'>
-                                <div class='cube' id='cube4'></div>
-                                <div class='glow' id='glow4'></div>
-                            </div>
-                    </div>
-                    <div class="pad5">
-                        <div class="padNote">B</div>
-                        <div class='group'>
-                            <div class='upFace'></div>
-                            <div class='leftFace'></div>
-                            <div class='rightFace'></div>
-                        </div> 
-                            <audio class="sound" src="./sounds/moon.mp3"></audio>
-                            <div class='pseudoUpFace'>
-                                <div class='cube' id='cube5'></div>
-                                <div class='glow' id='glow5'></div>
-                            </div>
-                    </div>
-                    <div class="pad6">
-                        <div class="padNote">N</div>
-                        <div class='group'>
-                            <div class='upFace'></div>
-                            <div class='leftFace'></div>
-                            <div class='rightFace'></div>
-                        </div> 
-                            <audio class="sound" src="./sounds/ufo.mp3"></audio>
-                        <div class='pseudoUpFace'>
-                            <div class='cube' id='cube6'></div>
-                            <div class='glow' id='glow6'></div>
-                        </div>
-                    </div>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/tooplate-style.css">
+        <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+
+        
+    </head>
+    <body>
+      
+      <!-- <div class="container-1">
+        <ul id="scene">
+            <li class="layer" data-depth=".1"><img src="img/text.png"></li>
+            <li class="layer" data-depth="1"><img src="img/png01.png"></li>
+            <li class="layer" data-depth="-1"><img src="img/png02.png"></li>
+            <li class="layer" data-depth="2"><img src="img/png03.png"></li>
+            <li class="layer" data-depth="0.5"><img src="img/png04.png"></li>
+        </ul>
+      </div> --> 
+
+      <a href="#chapter4">
+              <img id="BCapture" src="img/YCapture.png" />
+      </a>
+        <section class="first-section">
+          <!-- <a href="https://github.com/hy2897993" style="position: absolute; left: 480px; right: 900px; top: 330px; bottom:450px;background-color: rgba(245, 245, 220, 0);z-index: 1;">
+          </a> -->
+          <div class="container-1">
+            <a href="img/bg-1.jpg" data-title="I am a self-taught programmer with strong graphic skills from my architectural background." 
+              style="position: absolute; width: 100%;height:80vh;" data-width="1000" data-toggle="lightbox" data-gallery="background">
+            </a>
+            <a href="img/bg-2.jpg" data-title="I've been interested in programming and doing studies about parametric design through visualized programming tools." 
+              data-width="1000" data-toggle="lightbox" data-gallery="background"></a>
+            <a href="img/bg-3.jpg" data-title="To obtain master's degree at UCLA, I learned machine learning and Unity VR technologies, which betters my understanding of computer science, and leads me to discover my lifelong interest." 
+              data-width="1000" data-toggle="lightbox" data-gallery="background"></a>
+            <a href="img/bg-4.jpg" data-title="Using every moment of my free time to learn, now I am ready to become a front end engineer!" 
+              data-width="1000" data-toggle="lightbox" data-gallery="background"></a>
+
+            <div class="row">
+              <div class="col-md-12" style="z-index: 100;">
+                <div class="text-content">
+                  <h2>YING HUANG</h2>
+                  <div class="line-dec"></div>
+                  <h3>FRONT END ENGINEER</h3>
+                  <div class="primary-button">
+                    <a href="img/Ying Huang.pdf" download>DOWNLOAD RESUME</a>
+                  </div>
+                </div>
+                <!-- <div class="mu-featured-slider-wrapper">
+                  <div class="mu-featured-slider" id="typed-strings">
+                    <p>I am <span>Front End Engineer</span></p>
+                    <p>I am <span>Web Developer</span></p>
+                    <span id="typed"></span>
+                  </div>
+                </div> -->
+              </div>
             </div>
-    </fieldset>
-    <div class="visual3" id="visual3">
-        <div class="pearl"></div>
-        <div class="pearl"></div>
-        <div class="pearl"></div>
-        <div class="pearl"></div>
+            <!-- <ul id="scene">
+                <li class="layer" data-depth=".1"><img src="img/text-0.png"></li>
+                <li class="layer" data-depth="0.8"><img src="img/png01.png"></li>
+                <li class="layer" data-depth="-0.45"><img src="img/png02.png"></li>
+                <li class="layer" data-depth="-0.8"><img src="img/png03.png"></li>
+                <li class="layer" data-depth="0.5"><img src="img/png04.png"></li>
+            </ul> -->
+          </div>
+          
+        
+        </div>
+          <!-- <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="text-content">
+                  <h2>YING HUANG</h2>
+                  <div class="line-dec"></div>
+                  <span>FRONT END ENGINEER</span>
+                </div>
+                <div class="mu-featured-slider-wrapper">
+                  <div class="mu-featured-slider" id="typed-strings">
+                    <p>I am <span>Front End Engineer</span></p>
+                    <p>I am <span>Web Developer</span></p>
+                  </div>
+                  <span id="typed"></span>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </section>
 
-    </div>
-</div>
+        <section class="second-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-10 col-xl-offset-1">
+                <div class="left-image col-lg-4">
+                  
+                  <img src="img/angular-icon.png" alt="">
+                  <img src="img/react-icon.png" alt="">
+                  <img src="img/node-icon.png" alt="">
+                  <img src="img/python-icon.png" alt="">
+                  <img src="img/js-icon.png" alt="">
 
-</body>
-<script src = "2019-11-29musicgame.js"></script>
+                </div>
+                <div class="right-text col-md-8">
+                  <h2><b>FRONT END FOCUSED</b><br>WITH FULL STACK SKILL</h2>
+                  </br>
+                  <h4>
+                  <b>SELF MOTIVATED TO IMPROVE</b>
+                  </br>
+                    As a self-taught programmer who has been interested in programming since my student days, I have improved my abilities through elective courses and continuous optimization projects.
+                  </h4>
+                  <h4><b>STAY ATTUNED TO THE NEWEST</b></br>
+                    I learn the latest technologies and frameworks through a various source, and quickly absorb and apply them to the project.
+                  </h4>
+                  <h4><b>STRONG DESIGN BACKGROUND</b></br>
+                    Due to my architectural background, I have a variety of media design experiences, including 3D modeling, graphic design, illustration, and video production.
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="third-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-sm-6">
+                <div class="service-item">
+                  <div class="icon">
+                    <img src="img/first-icon.png" alt="">
+                  </div>
+                  <h4>FRONT END</h4>
+                  <p>HTML5</p>
+                  <div class="line-dec0"></div>
+                  <p>CSS</p>
+                  <div class="line-dec0"></div>
+                  <p>JavaScript</p>
+                  <div class="line-dec0"></div>
+                  <p>jQuery</p>
+                  <div class="line-dec0"></div>
+                  <p>React|Angular</p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="service-item">
+                  <div class="icon">
+                    <img src="img/second-icon.png" alt="">
+                  </div>
+                  <h4>SERVER</h4>
+                  <p>NodeJS</p>
+                  <div class="line-dec0"></div>
+                  <p>Python</p>
+                  <div class="line-dec0"></div>
+                  <p>Flask</p>
+                  <div class="line-dec0"></div>
+                  <p>Git</p>
+                  <div class="line-dec00"></div>
+                  <p class="p-dec00" style="color: transparent;">.</p>
+
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="service-item">
+                  <div class="icon">
+                    <img src="img/third-icon.png" alt="">
+                  </div>
+                  <h4>DATABASE</h4>
+                  <p>ClearDB</p>
+                  <div class="line-dec0"></div>
+                  <p>MySQL</p>
+                  <div class="line-dec0"></div>
+                  <p>PostgreSQL</p>
+                  <div class="line-dec00"></div>
+                  <p class="p-dec00" style="color: transparent;">.</p>
+                  <div class="line-dec00"></div>
+                  <p class="p-dec00" style="color: transparent;">.</p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="service-item">
+                  <div class="icon">
+                    <img src="img/fourth-icon.png" alt="">
+                  </div>
+                  <h4>GRAPHICS</h4>
+                  <p>Whole Adobe Set</p>
+                  <div class="line-dec0"></div>
+                  <p>3D Modeling</p>
+                  <div class="line-dec0"></div>
+                  <p>Animation</p>
+                  <div class="line-dec0"></div>
+                  <p>Rendering</p>
+                  <div class="line-dec00"></div>
+                  <p class="p-dec00" style="color: transparent;">.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div style="height: 10px;"></div>
+
+        <section class="fourth-section" style="display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+          <div style="display: inline-block;">
+            <a name="chapter4"></a> 
+            <h1 style="text-align: center; color: #415b90; "><B>PROJECT PORTFOLIO</B></h1>
+          </div>
+          <div class="container">
+            <div class="row">
+              
+              <div class="col-md-4" style="padding: 10px;height: 345px;margin-bottom: 30px;">
+                <div class="send-to-portfolio" style="margin: 20px; width: 90%; background-image: url(img/01.jpg); background-size: contain;background-position:top;height: 345px; background-repeat: no-repeat;">
+                  
+                  <div  style="width: 100%; background-image: url(img/item-bg.png); background-size: cover; background-repeat: no-repeat;height: 172.5px;display: inline-block;padding: 20px;">
+                    <a href="https://hy2897993.github.io/MusicBoardDemo">
+                      <h3 style="color: aliceblue;"><B> MUSIC BOARD </B></h3>
+                    </a>
+                    <h5 style="color: aliceblue;">HTML | CSS | JavaScript</h5>
+                    <div class="primary-button">
+                      <a href="https://youtu.be/mCtnzH-aHq0" data-width="1000" data-toggle="lightbox" data-gallery="mixedgallery">
+                        VIEW DEMO
+                      </a>
+                    </div>
+                </div>
+                
+              </div>
+              </div>
+
+
+              <div class="col-md-4" style="padding: 10px;height: 345px;margin-bottom: 30px;">
+                <div class="send-to-portfolio" style="margin: 20px;width: 90%;background-image: url(img/04.png); background-size: contain;background-position:top;height: 345px; background-repeat: no-repeat;">
+                  <div  style="width: 100%; background-image: url(img/item-bg.png); background-size: cover; background-repeat: no-repeat;height: 172.5px;display: inline-block;padding: 20px;">
+          
+                  <a href="https://hy2897993.github.io/weatherCard">
+                    <h3 style="color: aliceblue;"><B>WEATHER CARD</B></h3>
+                  </a>
+                  <h5 style="color: aliceblue;">React | GoogleAPI | ChartJS</h5>
+                  <div class="primary-button">
+                    <a href="https://youtu.be/VlDHQaJObLU" data-width="1000" data-toggle="lightbox" data-gallery="mixedgallery">
+                      VIEW DEMO
+                    </a>
+                  </div>
+                </div>
+              </div>
+              </div>
+
+              <div class="col-md-4" style="padding: 10px;height: 345px;margin-bottom: 30px;">
+                <div class="send-to-portfolio" style="margin: 20px;width: 90%;background-image: url(img/03.png); background-size: cover;background-position:center;height: 345px; background-repeat: no-repeat;">
+                  <div  style="width: 100%; background-image: url(img/item-bg.png); background-size: cover; background-repeat: no-repeat;height: 172.5px;display: inline-block;padding: 20px;">
+                  <a href="https://hy2897993.github.io/react-app-timetracking">
+                    <h3 style="color: aliceblue;"><B>10000-HOUR APP</B></h3>
+                  </a>
+                  <h5 style="color: aliceblue;">REACT | GoogleAPI | FirebaseDB</h5>
+                  <div class="primary-button">
+                    <a href="https://youtu.be/EeYqBH_lS8E" data-width="1000" data-toggle="lightbox" data-gallery="mixedgallery">
+                      VIEW DEMO
+                    </a>
+                  </div>
+                </div>
+              </div>
+              </div>
+
+              <div class="col-md-4" style="padding: 10px;height: 345px;margin-bottom: 30px;">
+                <div class="send-to-portfolio" style=" margin: 40px 20px 20px 20px;width: 90%;background-image: url(img/02.png); background-size: contain;background-position:top;height: 345px; background-repeat: no-repeat;">
+                  <div  style="width: 100%; background-image: url(img/item-bg.png); background-size: cover; background-repeat: no-repeat;height: 172.5px;display: inline-block;padding: 20px;">
+                    <a href="https://hy2897993.github.io/AirplanGameDemo">
+                      <h3 style="color: aliceblue;"><B>AIRPLANE GAME</B></h3>
+                    </a>
+                  <h5 style="color: aliceblue;">HTML | CSS | JavaScript</h5>
+                  <div class="primary-button">
+                      <a href="https://youtu.be/gFEWY5sbnOI" data-width="1000" data-toggle="lightbox" data-gallery="mixedgallery">
+                        VIEW DEMO
+                      </a>
+                  </div>
+                </div>
+              </div>
+              </div>
+
+              <div class="col-md-4" style="padding: 10px;height: 345px;margin-bottom: 30px;">
+                <div class="send-to-portfolio" style="margin: 40px 20px 20px 20px;width: 90%;background-image: url(img/05.png); background-size: contain;background-position:top;height: 345px; background-repeat: no-repeat;">
+                  <div  style="width: 100%; background-image: url(img/item-bg.png); background-size: cover; background-repeat: no-repeat;height: 172.5px;display: inline-block;padding: 20px;">
+                    <a href="https://hy2897993.github.io/angular-recipe-app">
+                      <h3 style="color: aliceblue;"><B>RECIPE SEARCH APP</B></h3>
+                    </a>
+                  <h5 style="color: aliceblue;">Angular | MySQL | Python</h5>
+                  <div class="primary-button">
+                    
+                    <a href="https://youtu.be/_lXIjjboh-A" data-width="1000" data-toggle="lightbox" data-gallery="mixedgallery">
+                      SOURCE CODE
+                    </a>
+                  </div>
+                </div>
+              </div>
+              </div>
+
+              <div class="col-md-4" style="padding: 10px;height: 345px;margin: 0px;margin-bottom: 30px;">
+                <div class="send-to-portfolio" style="margin: 40px 20px 20px 20px; height: 345px;width: 90%;background-image: url(img/heading-bg-1.png); background-size: cover;background-position:center;height: 345px; background-repeat: no-repeat;">
+                  <div  style="width: 100%; background-image: url(img/item-bg.png); background-size: cover; background-repeat: no-repeat;height: 172.5px;display: inline-block;padding: 20px;">
+                  <a href="portfolio-page.html">
+                    <h3 style="color: aliceblue;"><B>SEE MORE</B></h3>
+                  </a>
+                  <div class="primary-button">
+                    <a href="portfolio-page.html">Visit Work Gallery</a>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- <section class="fivth-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1"> 
+                <div class="left-text col-md-8">
+                  <h4><em>Aliquam efficitur</em><br>augue et libero vulputate feugiat</h4>
+                  <p>Mauris eget orci porta, aliquam neque sit amet, porttitor dui. Donec efficitur vehicula justo quis varius. Vivamus pharetra lorem eget turpis ornare tempus. Vivamus ac sodales lectus. Morbi rhoncus feugiat neque ultrices rhoncus. Maecenas ultrices, nisl pellentesque hendrerit dignissim, ante purus hendrerit urna, eu tristique est massa quis risus.</p>
+                </div>
+                <div class="right-image col-md-4">
+                  <img src="img/right-image.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+<!-- 
+        <section class="sixth-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <form id="contact" action="" method="post">
+                    <div class="col-md-6">
+                      <fieldset>
+                        <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required>
+                      </fieldset>
+                    </div>
+                    <div class="col-md-6">
+                      <fieldset>
+                        <input name="email" type="email" class="form-control" id="email" placeholder="Your email..." required>
+                      </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                      <fieldset>
+                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required></textarea>
+                      </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                      <fieldset>
+                        <button type="submit" id="form-submit" class="btn">Send Message</button>
+                      </fieldset>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="right-info">
+                  <ul>
+                    <li><a href="#"><i class="fa fa-envelope"></i>hello@company.com</a></li>
+                    <li><a href="#"><i class="fa fa-phone"></i>050 060 0780 / 050 060 0110</a></li>
+                    <li><a href="#"><i class="fa fa-map-marker"></i>1186 New Street, ST 10990</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <ul>
+                  <li><a href="https://github.com/hy2897993"><i class="fa fa-github"></i></a></li>
+                  <li><a href="mailto:huangying0528@gmail.com?Subject=Hello--%20from%20Github"><i class="fa fa-envelope"></i></a></li>
+                  <li><a href="https://www.linkedin.com/in/ying-huang-UCLA/"><i class="fa fa-linkedin"></i></a></li>
+                  <li><a href="img/Ying Huang.pdf" download><i class="fa fa-file"></i></a></li>
+                  <!-- <li><a href="#"><i class="fa fa-dribbble"></i></a></li> -->
+                </ul>
+                <!-- <p>Copyright &copy; 2017 Company Name 
+                        
+                        | Design: Tooplate</p> -->
+              </div>
+            </div>
+          </div>
+        </footer>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/javascript" src="js/typed.min.js"></script>
+
+    </body>
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/typed.min.js"></script>
+    <script src="js/parallax.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+    <script type="text/javascript">    
+        var scene = document.getElementById('scene');
+        var parallax = new Parallax(scene);
+    </script>
 </html>
+
